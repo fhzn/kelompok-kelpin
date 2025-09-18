@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Form Pendaftaran Maulid Nabi - SMK PGRI 35 Solokan Jeruk</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <h1>Form Pendaftaran Maulid Nabi</h1>
+      <u><p class="school-name">SMK PGRI 35 SOLOKAN JERUK</p></u>
+    </div>
+    <div class="logo">
+        <img src="smkpgri.png" width="100">
+    </div>
+  </header>
+
+  <section class="event-section">
+    <div class="container">
+      <form id="registrationForm" class="event-card" novalidate>
+        <label for="name">Nama Lengkap:</label><br />
+        <input type="text" id="name" name="name" required placeholder="Masukkan nama lengkap" /><br /><br />
+
+        <label for="class">Kelas:</label><br />
+        <input type="text" id="class" name="class" required placeholder="Contoh: 11 RPL 1" /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required placeholder="Masukkan email" /><br /><br />
+
+        <label for="phone">No. Telepon:</label><br />
+        <input type="tel" id="phone" name="phone" required placeholder="Masukkan nomor telepon" /><br /><br />
+
+        <button type="submit" class="cta-button">Kirim Pendaftaran</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2023 SMK PGRI 35 SOLOKAN JERUK | Memperingati Maulid Nabi Muhammad SAW</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const kelas = this.class.value.trim();
+      const email = this.email.value.trim();
+      const phone = this.phone.value.trim();
+
+      if (!name || !kelas || !email || !phone) {
+        alert('Mohon lengkapi semua data.');
+        return;
+      }
+
+      alert(`Terima kasih, ${name}, telah mendaftar!`);
+      this.reset();
+    });
+  </script>
+</body>
+</html>
